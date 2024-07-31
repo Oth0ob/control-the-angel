@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servo Motor Control</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .slider-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .slider-label {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    input[type="range"] {
+      width: 300px;
+      height: 20px;
+      background-color: #ddd;
+      outline: none;
+      -webkit-appearance: none;
+      border-radius: 10px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background-color: #4CAF50;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background-color: #4CAF50;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <label for="servo-angle" class="slider-label">Servo Motor Angle</label>
+    <input type="range" id="servo-angle" min="0" max="180" value="90" oninput="updateServoAngle()">
+  </div>
+
+  <script>
+    function updateServoAngle() {
+      const servoAngle = document.getElementById('servo-angle').value;
+      console.log(`Servo angle: ${servoAngle} degrees`);
+      // Add code to control the servo motor using the updated angle
+    }
+  </script>
+</body>
+</html>
